@@ -38,6 +38,16 @@ El usuario de la aplicación tiene que ser capaz de:
 
 ## Readme del código propuesto para el challenge
 
+Archivo .env
+
+```
+DATABASE_HOST="127.0.0.1"
+DATABASE_USER="root"
+DATABASE_PASSWORD="secret"
+DATABASE_NAME="todo"
+DATABASE_PORT=5432
+```
+
 Tener configurada una base de datos en PostgreSQL, los parámetros para conectarse a la misma están en el archivo "todoapp/.env". Pueden usarse los valores literales de dicho archivo o configurar los mismos como variables de entorno
 
 Ejemplo: 
