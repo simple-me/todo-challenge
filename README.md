@@ -38,7 +38,7 @@ El usuario de la aplicación tiene que ser capaz de:
 
 ## Readme del código propuesto para el challenge
 
-Archivo .env
+Archivo .env a modo de prueba
 
 ```
 DATABASE_HOST="127.0.0.1"
