@@ -49,22 +49,29 @@ def filter_tasks(request):
 def create_task(request):
     res = json.loads(request.body)
     try:
-        Tasks.objects.create(title=res["title"], task=res["task"], completed=res["completed"])
+        response = Tasks.objects.create(title=res["title"], task=res["task"], completed=res["completed"])
+        return HttpResponse("Task created, id: {}".format(response.id))
     except Exception as e:
-        return HttpResponse(e) 
-    return HttpResponse(res["task"])
+        return HttpResponse(e)
 
 @csrf_exempt
 def delete_task(request):
     res = json.loads(request.body)
-    task_to_delete = Tasks.objects.get(title=res["title"])
-    task_to_delete.delete()
-    return HttpResponse(res["title"])
+    try:
+        task_to_delete = Tasks.objects.get(title=res["title"])
+        task_to_delete.delete()
+        return HttpResponse("Task deleted!")
+    except Exception as e:
+        return HttpResponse(e)
 
 @csrf_exempt
 def complete_task(request):
     res = json.loads(request.body)
-    task_to_complete = Tasks.objects.get(title=res["title"])
-    task_to_complete.completed = True
-    task_to_complete.save()
+    try:
+        task_to_complete = Tasks.objects.get(title=res["title"])
+        task_to_complete.completed = True
+        task_to_complete.save()
+        return HttpResponse("Task marked as completed!")
+    except Exception as e:
+        return HttpResponse(e)
     return HttpResponse(res["title"])
