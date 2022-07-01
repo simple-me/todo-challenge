@@ -137,6 +137,14 @@ curl --location --request GET 'localhost:8000/app/tasks/search?taskbody=a&timecr
 
 Las pruebas unitarias actualmente componen las acciones de Crear una tarea, eliminarla, marcarla como completa y listarlas
 
+La DB de postgresql, a modo de prueba, puede ser desplegada via docker:
+
+```
+docker container run --name postgres -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:12-alpine
+
+docker exec -it postgres createdb --username=root --owner=root todo
+```
+
 La imagen de Docker puede ser construida y ejecutada de la siguiente forma:
 
 ```
