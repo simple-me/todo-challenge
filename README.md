@@ -151,7 +151,7 @@ La imagen de Docker puede ser construida y ejecutada de la siguiente forma:
 docker build -t "todoapp-challenge" .
 
 
-docker container run -it --rm -p 8000:8000 -e DATABASE_HOST=192.168.0.5 -e DATABASE_USER=root -e DATABASE_PASSWORD=secret -e DATABASE_PORT=5432 -e DATABASE_NAME=todo --name todoapp-challenge todoapp-challenge
+docker container run -it --rm -p 8000:8000 -e DATABASE_HOST=<host_maquina> -e DATABASE_USER=root -e DATABASE_PASSWORD=secret -e DATABASE_PORT=5432 -e DATABASE_NAME=todo --name todoapp-challenge todoapp-challenge
 ```
 
 
